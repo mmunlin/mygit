@@ -1,1 +1,133 @@
 This is version 1. testing git version control.
+Last login: Mon Oct  9 20:35:12 on console
+dmm:>ped
+zsh: command not found: ped
+dmm:>pwd
+/Users/mm
+dmm:>cd Desktop 
+dmm:>ls
+dmm:>mkdir version
+dmm:>cd version 
+dmm:>pwd
+/Users/mm/Desktop/version
+dmm:>ls
+dmm:>vi v1.txt
+dmm:>git init
+Initialized empty Git repository in /Users/mm/Desktop/version/.git/
+dmm:>ls
+v1.txt
+dmm:>ls -al
+total 8
+drwxr-xr-x  4 mm  staff  128 Oct 10 19:31 .
+drwx------@ 5 mm  staff  160 Oct 10 19:30 ..
+drwxr-xr-x  9 mm  staff  288 Oct 10 19:31 .git
+-rw-r--r--  1 mm  staff   48 Oct 10 19:31 v1.txt
+dmm:>git status
+On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	v1.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+dmm:>git add v1.txt
+dmm:>git status    
+On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   v1.txt
+
+dmm:>ls
+v1.txt
+dmm:>ls -al
+total 8
+drwxr-xr-x   4 mm  staff  128 Oct 10 19:31 .
+drwx------@  5 mm  staff  160 Oct 10 19:30 ..
+drwxr-xr-x  10 mm  staff  320 Oct 10 19:32 .git
+-rw-r--r--   1 mm  staff   48 Oct 10 19:31 v1.txt
+dmm:>cd .git 
+dmm:>ls
+HEAD        description index       objects
+config      hooks       info        refs
+dmm:>ls -al
+total 32
+drwxr-xr-x  10 mm  staff  320 Oct 10 19:32 .
+drwxr-xr-x   4 mm  staff  128 Oct 10 19:31 ..
+-rw-r--r--   1 mm  staff   21 Oct 10 19:31 HEAD
+-rw-r--r--   1 mm  staff  137 Oct 10 19:31 config
+-rw-r--r--   1 mm  staff   73 Oct 10 19:31 description
+drwxr-xr-x  15 mm  staff  480 Oct 10 19:31 hooks
+-rw-r--r--   1 mm  staff  104 Oct 10 19:32 index
+drwxr-xr-x   3 mm  staff   96 Oct 10 19:31 info
+drwxr-xr-x   5 mm  staff  160 Oct 10 19:32 objects
+drwxr-xr-x   4 mm  staff  128 Oct 10 19:31 refs
+dmm:>cd objects 
+dmm:>ls
+a9   info pack
+dmm:>cd ../hooks 
+dmm:>ls
+applypatch-msg.sample     pre-push.sample
+commit-msg.sample         pre-rebase.sample
+fsmonitor-watchman.sample pre-receive.sample
+post-update.sample        prepare-commit-msg.sample
+pre-applypatch.sample     push-to-checkout.sample
+pre-commit.sample         update.sample
+pre-merge-commit.sample
+dmm:>cd ..
+dmm:>pwd
+/Users/mm/Desktop/version/.git
+dmm:>cd ..
+dmm:>ls
+v1.txt
+dmm:>git commit -m "complete v1"   
+[main (root-commit) 6b8e2c3] complete v1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 v1.txt
+dmm:>git log
+
+dmm:>
+dmm:>touch v2.txt
+dmm:>touch v3.txt
+dmm:>vi v2.txt
+dmm:>vi v3.txt
+dmm:>ls
+v1.txt v2.txt v3.txt
+dmm:>git status
+On branch main
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	v2.txt
+	v3.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+dmm:>git add .       
+dmm:>git status
+On branch main
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   v2.txt
+	new file:   v3.txt
+
+dmm:>git commit -m "complete v2 and v3"
+[main 5600e3c] complete v2 and v3
+ 2 files changed, 2 insertions(+)
+ create mode 100644 v2.txt
+ create mode 100644 v3.txt
+dmm:>git log
+dmm:>git status                        
+On branch main
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   v3.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+dmm:>git diff v3.txt
+dmm:>git checkout v3.txt
+Updated 1 path from the index
+dmm:>
